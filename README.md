@@ -1,11 +1,1 @@
-<div align="center">
-
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-
-  <h1>Built with AI Studio</h2>
-
-  <p>The fastest path from prompt to production with Gemini.</p>
-
-  <a href="https://aistudio.google.com/apps">Start building</a>
-
-</div>
+Le AI Impact Challenge 2.0 est un programme intensif de 13 jours conçu pour les créateurs de contenu, entrepreneurs et solopreneurs francophones qui veulent construire une audience engagée sur Facebook — avec l'IA comme arme principale, pas comme béquille.
