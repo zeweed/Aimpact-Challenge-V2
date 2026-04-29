@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+
+  /* The requested base color and its variations for glows/highlights */
+  --color-brand: #135135; /* L'original */
+  --color-brand-light: #238f5f; /* Pour les textes et petits accents lumineux sur fond noir */
+  --color-brand-dark: #08281a; /* Pour les fonds très sombres */
+  
+  --color-background: #000000; /* Deep black for the high-end OLED look */
+  --color-surface: #0a0a0a; /* Slightly elevated */
+  --color-surface-hover: #141414; /* Hover state */
+  
+  --color-border: #27272a; /* Zinc 800 for very subtle thin borders */
+  --color-foreground: #ffffff; /* Pure white for high contrast headers */
+  --color-muted: #a1a1aa; /* Zinc 400 for paragraphs */
+}
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: var(--color-brand);
+  color: white;
+}
+
+/* Custom Utilities for the specific aesthetic */
+.glass-effect {
+  background-color: rgba(10, 10, 10, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Pricing Section */
+.prix-simple {
+  margin: 32px 0 16px;
+  padding: max(20px, 4vw);
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.prix-simple-amount {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(56px, 15vw, 88px);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--color-foreground);
+}
+.prix-simple-label {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-brand-light);
+  margin-top: 8px;
+  margin-bottom: 24px;
+}
+.prix-simple-sub {
+  font-size: 15px;
+  color: var(--color-muted);
+  max-width: 420px;
+  line-height: 1.7;
+}
+
+/* ─── MOBILE ─── */
+@media (max-width: 768px) {
+  .hero-title { font-size: clamp(44px, 11vw, 64px) !important; line-height: 1.05 !important; }
+  .section-title { font-size: 26px !important; line-height: 1.2 !important; }
+  .card-title { font-size: 18px !important; }
+  .prix-simple-amount { font-size: 56px !important; }
+  .body-text, p:not(.text-sm):not(.text-xs) { font-size: 15px !important; line-height: 1.6 !important; }
+  .text-sm { font-size: 13px !important; }
+  .badge, .text-xs, .small-text { font-size: 12px !important; }
+  .stat-number { font-size: 32px !important; }
+  section { padding: 48px 20px !important; }
+  .grid { grid-template-columns: 1fr !important; }
+  .stats-grid { grid-template-columns: 1fr 1fr !important; }
+  .nav-links { display: none !important; }
+  .navbar-inner { padding: 12px 20px !important; }
+  .nav-cta { font-size: 12px !important; padding: 8px 14px !important; }
+  section.hero-section { padding-top: 140px !important; }
+  .hero-subtitle { font-size: 15px !important; line-height: 1.6 !important; }
+  .hero-cta-container { flex-direction: column !important; gap: 12px !important; width: 100% !important; }
+  .hero-cta-btn { display: flex !important; width: 100% !important; justify-content: center !important; text-align: center !important; }
+  .bento-card, .prix-simple { padding: 24px !important; }
+  .footer-container { flex-direction: column !important; gap: 24px !important; }
+}
+
+@media (max-width: 480px) {
+  .hero-title { font-size: clamp(38px, 12vw, 46px) !important; }
+  .section-title { font-size: 22px !important; }
+  .stat-number { font-size: 26px !important; }
+  .prix-simple-amount { font-size: 48px !important; }
+  .v1-btn { display: none !important; }
+}
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes scroll-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes scroll-up {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+.scrolling-wrapper-horizontal {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+}
+
+.scrolling-wrapper-vertical {
+  display: flex;
+  flex-direction: column;
+  height: max-content;
+  will-change: transform;
+}
+
+/* Ensure smooth hover pause */
+.scrolling-wrapper-horizontal:hover,
+.scrolling-wrapper-horizontal:active,
+.scrolling-wrapper-horizontal:focus-within,
+.scrolling-wrapper-vertical:hover,
+.scrolling-wrapper-vertical:active,
+.scrolling-wrapper-vertical:focus-within {
+  animation-play-state: paused !important;
+}
+
+.animate-scroll-left {
+  animation: scroll-left 35s linear infinite;
+}
+
+.animate-scroll-right {
+  animation: scroll-right 38s linear infinite;
+}
+
+.animate-scroll-up {
+  animation: scroll-up 50s linear infinite;
+}
