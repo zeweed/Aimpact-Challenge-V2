@@ -169,24 +169,24 @@ const OriginStory = () => (
     <div className="max-w-7xl mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
         
-        <BentoCard className="aspect-[4/3] lg:aspect-square flex items-end p-0 border-zinc-800 group relative">
+        <div className="relative rounded-[32px] overflow-hidden border border-zinc-800 group aspect-[4/5] md:aspect-square flex items-end">
            {/* Image of Divin Setondji */}
            <div className="absolute inset-0 bg-zinc-900 overflow-hidden">
               <img 
                 src="https://live.divin.business/wp-content/uploads/2026/03/CHARIOW-CREATORS-MEETUP257-scaled.jpg" 
                 alt="Divin Setondji" 
                 referrerPolicy="no-referrer"
-                className="absolute inset-0 w-full h-full object-cover opacity-90 grayscale group-hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100"
+                className="absolute inset-0 w-full h-full object-cover object-top lg:object-center opacity-90 grayscale group-hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent z-10 pointer-events-none"></div>
            </div>
            
-           <div className="relative z-20 p-8 md:p-12 w-full">
+           <div className="relative z-20 p-8 w-full">
              <Badge className="mb-4 bg-black border-zinc-700">Le Grand Chef</Badge>
              <h3 className="card-title text-3xl font-display font-medium text-white mb-2">Divin Setondji</h3>
              <p className="text-zinc-400 font-mono text-sm">Contentpreneur, le créateur de créateurs</p>
            </div>
-        </BentoCard>
+        </div>
 
         <div>
           <h2 className="font-display font-medium text-white mb-6 md:mb-8 leading-tight whitespace-nowrap text-[clamp(16px,4.5vw,28px)] md:text-[clamp(24px,3.5vw,32px)] lg:text-[clamp(22px,2.5vw,40px)]">
